@@ -133,8 +133,9 @@
             resultDiv.innerHTML = "Memuat informasi video... Mohon tunggu.";
 
             try {
-                const response = await fetch(`https://api.kuncen.xyz/tiktok?apikey=${API_KEY}&url=${encodeURIComponent(videoUrl)}`);
+                const response = await fetch(`https://api.kuncen.xyz/api/tiktok?apikey=idris123&url=${encodeURIComponent(videoUrl)}`);
                 const data = await response.json();
+                console.log(data);
 
                 if (data.result) {
                     const { video, author, statistic, sound } = data.result;
