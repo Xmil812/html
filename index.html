@@ -141,6 +141,11 @@
                 })
                 .catch(error => console.error('Download failed:', error));
         }
+
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
         async function getVideoInfo() {
             const videoUrl = document.getElementById('videoUrl').value;
             const resultDiv = document.getElementById('result');
@@ -191,10 +196,6 @@
                 resultDiv.innerHTML = "<p class='fade-in' style='color: #dc3545;'>Terjadi kesalahan saat mengambil informasi video. Silakan coba lagi nanti.</p>";
                 console.error('Error:', error);
             }
-        }
-
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
     </script>
 </body>
